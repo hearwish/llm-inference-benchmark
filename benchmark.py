@@ -172,3 +172,8 @@ def main():
 
 if __name__ == '__main__':
     main()
+
+# 使用方法：
+# 1.启动vllm服务  CUDA_VISIBLE_DEVICES=0 vllm serve /home/user/models/deepseek/DeepSeek-R1-Distill-Qwen-7B --port 8000  --max-model-len 16384
+# 2.启动benchmark.py
+# python benchmark.py --model /home/user/models/deepseek/DeepSeek-R1-Distill-Qwen-7B --backend vllm --endpoint http://10.41.107.200:8000 --duration 15 --batch 1 2 4 8

@@ -57,3 +57,24 @@ Mistral 系列:
 ![](images/qwen-7b-token_per_s.png)
 ![](images/qwen-7b-avg_first_token_latency.png)
 ![](images/qwen-7b-avg_token_latency.png)
+
+
+
+# 使用方法
+
+### 1.启动vllm服务
+
+```
+CUDA_VISIBLE_DEVICES=0 vllm serve /home/user/models/deepseek/DeepSeek-R1-Distill-Qwen-7B --port 8000  --max-model-len 16384
+```
+
+### 2.启动脚本命令
+
+```
+python benchmark.py --model /home/user/models/deepseek/DeepSeek-R1-Distill-Qwen-7B --backend vllm --endpoint http://10.41.107.200:8000 --duration 15 --batch 1 2 4 8
+```
+
+### 3.TODO
+
+测试如何使用draw.ipynb画图
+
